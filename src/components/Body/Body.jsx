@@ -8,6 +8,7 @@ import {
 	Divider,
 	Chip,
 } from "@mui/material";
+import RingVolumeTwoToneIcon from "@mui/icons-material/RingVolumeTwoTone";
 
 import styles from "./Body.module.css";
 import { useGetAllActivitiesQuery } from "../../features/activitiesApi.js";
@@ -34,7 +35,17 @@ function Body() {
 		<div>
 			<ActivitiesHeader />
 			<Divider>
-				<Chip label='ALL CALLS' />
+				<Chip
+					label='All Calls'
+					variant='outlined'
+					size='small'
+					icon={<RingVolumeTwoToneIcon color='#7EAA92' />}
+					style={{
+						paddingLeft: "1.6rem",
+						paddingRight: "1.6rem",
+						color: "#7EAA92",
+					}}
+				/>
 			</Divider>
 			{isLoading ? (
 				<div>

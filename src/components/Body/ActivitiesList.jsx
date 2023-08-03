@@ -1,4 +1,5 @@
 import React from "react";
+import ActivityCall from "./ActivityCall.jsx";
 
 function ActivitiesList({ activities }) {
 	return (
@@ -8,20 +9,10 @@ function ActivitiesList({ activities }) {
 				{activities.map((activity) => {
 					console.log(activity.created_at);
 					return (
-						<div key={activity.id}>
-							<div>
-								Direction:
-								{activity.direction}
-							</div>
-							<div>
-								From:
-								{activity.from}
-							</div>
-							<div>
-								To:
-								{activity.to}
-							</div>
-						</div>
+						<ActivityCall
+							key={activity.id}
+							activity={activity}
+						/>
 					);
 				})}
 			</div>
