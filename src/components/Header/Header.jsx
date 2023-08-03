@@ -33,7 +33,7 @@ const Header = () => {
 						strokeWidth='0'
 						fill='url(#gradient)'
 						fillOpacity='0.53'
-						className='transition-all duration-300 ease-in-out delay-150 path-0'
+						className={styles.headerSVGPath1}
 						transform='rotate(-180 720 250)'></path>
 					<defs>
 						<linearGradient
@@ -56,7 +56,7 @@ const Header = () => {
 						strokeWidth='0'
 						fill='url(#gradient)'
 						fillOpacity='1'
-						class='transition-all duration-300 ease-in-out delay-150 path-1'
+						className={styles.headerSVGPath2}
 						transform='rotate(-180 720 250)'></path>
 				</svg>
 			</div>

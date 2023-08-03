@@ -3,6 +3,7 @@ import PhoneMissedTwoToneIcon from "@mui/icons-material/PhoneMissedTwoTone";
 
 import { IconButton } from "@mui/material";
 import styles from "./CallInfo.module.css";
+import dateFormater from "../../utils/dateFormater.js";
 
 function CallInfo({ activity }) {
 	const {
@@ -16,9 +17,12 @@ function CallInfo({ activity }) {
 		is_archived,
 	} = activity;
 
+	const { localTime } = dateFormater(created_at);
+
 	return (
 		<div className={styles.callInfoContainer}>
 			<IconButton
+				className={styles.callInfoIconButton}
 				size='small'
 				style={{ color: "#CECE5A" }}>
 				<PhoneMissedTwoToneIcon />
@@ -28,7 +32,7 @@ function CallInfo({ activity }) {
 				<div className={styles.callInfoFrom}>{from}</div>
 			</div>
 
-			<div className={styles.callInfoDuration}>{duration}</div>
+			<div className={styles.callInfoDuration}>{localTime}</div>
 		</div>
 	);
 }

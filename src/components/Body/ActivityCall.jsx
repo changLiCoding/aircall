@@ -16,7 +16,7 @@ function ActivityCall({ activity }) {
 		is_archived,
 	} = activity;
 
-	const dateInStr = dateFormater(created_at);
+	const { localDate } = dateFormater(created_at);
 
 	console.log(
 		call_type,
@@ -31,7 +31,7 @@ function ActivityCall({ activity }) {
 
 	return (
 		<div className={styles.activityCallContainer}>
-			<div>{dateInStr}</div>
+			<div>{localDate}</div>
 			<hr className={styles.activityCallDivider} />
 			<CallInfo activity={activity} />
 		</div>

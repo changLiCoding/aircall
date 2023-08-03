@@ -21,6 +21,15 @@
 	top: 0;
 }
 
-.headerSVG {
+.headerSVGPath1 {
 	transition: duration-300 ease-in-out delay-150;
+
+	-webkit-transition: all 0.3s ease-in-out 0.15s;
+}
+
+.headerSVGPath2 {
+	transition: duration-300 ease-in-out delay-150;
+	transform: rotate(-180 720 250);
+	-webkit-transition: all 0.3s ease-in-out 0.15s;
+	/* transition-all: duration-300 ease-in-out delay-150; */
 }

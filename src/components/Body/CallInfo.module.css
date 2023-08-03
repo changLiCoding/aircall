@@ -20,3 +20,17 @@
 		}
 	}
 }
+
+.callInfoIconButton {
+	flex: 0.1;
+}
+
+.callInfo {
+	flex: 0 0 50%;
+}
+
+.callInfoDuration {
+	flex: 0.1;
+	font-size: 0.8rem;
+	color: #a6a6a6;
+}
