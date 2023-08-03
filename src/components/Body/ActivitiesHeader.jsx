@@ -1,10 +1,13 @@
 import { Button } from "@mui/material";
 import React from "react";
 
+import styles from "./ActivitiesHeader.module.css";
+
 function ActivitiesHeader() {
 	return (
-		<div className='activitiesHeaderContainer'>
-			<Button variant='contained'>Archive all calls</Button>
+		<div>
+			Archive all calls
+			{/* <Button variant='contained'>Archive all calls</Button> */}
 		</div>
 	);
 }

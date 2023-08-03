@@ -1,7 +1,6 @@
 import React from "react";
 import ArchiveIcon from "@mui/icons-material/Archive";
 import { useSelector, useDispatch } from "react-redux";
-
 import {
 	Button,
 	Skeleton,
@@ -9,17 +8,14 @@ import {
 	Divider,
 	Chip,
 } from "@mui/material";
+
+import styles from "./Body.module.css";
 import { useGetAllActivitiesQuery } from "../../features/activitiesApi.js";
 import ActivitiesList from "./ActivitiesList.jsx";
+import ActivitiesHeader from "./ActivitiesHeader.jsx";
 
 function Body() {
 	const activities = useSelector((state) => state.activities);
-
-	// const { data, error, isLoading } = useGetAllActivitiesQuery();
-
-	// console.log(data);
-
-	// const { data } = useGetAllActivites();
 
 	const { data, isLoading } = useGetAllActivitiesQuery();
 
@@ -36,8 +32,7 @@ function Body() {
 
 	return (
 		<div>
-			Body
-			<h2>Activities</h2>
+			<ActivitiesHeader />
 			<Divider>
 				<Chip label='ALL CALLS' />
 			</Divider>
