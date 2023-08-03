@@ -1,6 +1,6 @@
 .container {
 	width: 376px;
-	height: 666px;
+	height: 766px;
 	z-index: 100;
 
 	background: white;
@@ -9,5 +9,13 @@
 }
 
 .containerView {
-	padding: 20px;
+	padding: 15px;
+}
+
+.headerSVGContainer {
+	position: absolute;
+	z-index: -1;
+	left: 0px;
+	width: 100%;
+	top: 0;
 }

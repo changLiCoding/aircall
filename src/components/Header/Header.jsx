@@ -1,8 +1,66 @@
 import React from "react";
+import styles from "../../css/app.module.css";
 
 const Header = () => {
 	return (
 		<header>
+			<div className={styles.headerSVGContainer}>
+				<svg
+					width='100%'
+					height='100%'
+					id='svg'
+					viewBox='0 0 1440 490'
+					xmlns='http://www.w3.org/2000/svg'
+					class='transition duration-300 ease-in-out delay-150'>
+					<defs>
+						<linearGradient
+							id='gradient'
+							x1='99%'
+							y1='39%'
+							x2='1%'
+							y2='61%'>
+							<stop
+								offset='5%'
+								stop-color='#7bdcb5'></stop>
+							<stop
+								offset='95%'
+								stop-color='#fcb900'></stop>
+						</linearGradient>
+					</defs>
+					<path
+						d='M 0,500 C 0,500 0,166 0,166 C 169.86666666666667,152 339.73333333333335,138 512,148 C 684.2666666666667,158 858.9333333333334,192.00000000000003 1014,199 C 1169.0666666666666,205.99999999999997 1304.5333333333333,186 1440,166 C 1440,166 1440,500 1440,500 Z'
+						stroke='none'
+						stroke-width='0'
+						fill='url(#gradient)'
+						fill-opacity='0.53'
+						class='transition-all duration-300 ease-in-out delay-150 path-0'
+						transform='rotate(-180 720 250)'></path>
+					<defs>
+						<linearGradient
+							id='gradient'
+							x1='99%'
+							y1='39%'
+							x2='1%'
+							y2='61%'>
+							<stop
+								offset='5%'
+								stop-color='#7bdcb5'></stop>
+							<stop
+								offset='95%'
+								stop-color='#fcb900'></stop>
+						</linearGradient>
+					</defs>
+					<path
+						d='M 0,500 C 0,500 0,333 0,333 C 171.46666666666664,365.66666666666663 342.9333333333333,398.3333333333333 515,380 C 687.0666666666667,361.6666666666667 859.7333333333333,292.33333333333337 1014,276 C 1168.2666666666667,259.66666666666663 1304.1333333333332,296.3333333333333 1440,333 C 1440,333 1440,500 1440,500 Z'
+						stroke='none'
+						stroke-width='0'
+						fill='url(#gradient)'
+						fill-opacity='1'
+						class='transition-all duration-300 ease-in-out delay-150 path-1'
+						transform='rotate(-180 720 250)'></path>
+				</svg>
+			</div>
+
 			<svg
 				width='486px'
 				height='168px'
