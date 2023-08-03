@@ -1,23 +1,20 @@
 import React from "react";
-import ReactDOM from "react-dom";
-import { store } from "./app/store";
-import { Provider } from "react-redux";
 
-import Header from "./Header.jsx";
+import Header from "./components/Header/index.jsx";
+import ContextWrapper from "./ContextWrapper.jsx";
+import Body from "./components/Body/index.jsx";
 
-const App = () => {
+function App() {
 	return (
-		<React.StrictMode>
-			<Provider store={store}>
-				<div className='container'>
-					<Header />
-					<div className='container-view'>Some activities should be here</div>
-				</div>
-			</Provider>
-		</React.StrictMode>
-	);
-};
+		<ContextWrapper>
+			<div className='container'>
+				<Header />
 
-ReactDOM.render(<App />, document.getElementById("app"));
+				<Body />
+				<div className='container-view'>Some activities should be here</div>
+			</div>
+		</ContextWrapper>
+	);
+}
 
 export default App;
