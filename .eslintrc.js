@@ -23,6 +23,7 @@ module.exports = {
 		"jsx-quotes": "off",
 		"implicit-arrow-linebreak": "off",
 		"no-confusing-arrow": "off",
+		"operator-linebreak": "off",
 		camelcase: "off",
 		"function-paren-newline": "off",
 		"react/react-in-jsx-scope": 0,

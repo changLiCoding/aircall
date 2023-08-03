@@ -14,6 +14,7 @@ function ActivityCall({ activity }) {
 		via,
 		duration,
 		is_archived,
+		isSameDay,
 	} = activity;
 
 	const { localDate } = dateFormater(created_at);
@@ -31,8 +32,8 @@ function ActivityCall({ activity }) {
 
 	return (
 		<div className={styles.activityCallContainer}>
-			<div>{localDate}</div>
-			<hr className={styles.activityCallDivider} />
+			<div className={isSameDay ? styles.hiden : null}>{localDate}</div>
+			<hr className={isSameDay ? styles.hiden : styles.activityCallDivider} />
 			<CallInfo activity={activity} />
 		</div>
 	);

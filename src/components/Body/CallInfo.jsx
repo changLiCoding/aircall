@@ -29,7 +29,7 @@ function CallInfo({ activity }) {
 			</IconButton>
 
 			<div className={styles.callInfo}>
-				<div className={styles.callInfoFrom}>{from}</div>
+				<div className={styles.callInfoFrom}>{from || "Unknown"}</div>
 			</div>
 
 			<div className={styles.callInfoDuration}>{localTime}</div>
