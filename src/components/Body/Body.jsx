@@ -48,7 +48,7 @@ function Body() {
 				/>
 			</Divider>
 			{isLoading ? (
-				<div>
+				<div className={styles.circularProgressContainer}>
 					<CircularProgress />
 				</div>
 			) : (

@@ -4,7 +4,6 @@ import ActivityCall from "./ActivityCall.jsx";
 function ActivitiesList({ activities }) {
 	return (
 		<div>
-			ActivitiesList
 			<div>
 				{activities.map((activity) => {
 					console.log(activity.created_at);

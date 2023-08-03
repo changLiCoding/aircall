@@ -1,0 +1,22 @@
+.callInfoContainer {
+	height: 55px;
+
+	border-radius: 15px;
+	border: 1px solid #e6e6e6;
+
+	display: flex;
+	align-content: center;
+	justify-content: space-around;
+	align-items: center;
+
+	animation: slide-top 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+
+	@keyframes slide-top {
+		0% {
+			transform: translateY(0);
+		}
+		100% {
+			transform: translateY(-100px);
+		}
+	}
+}

@@ -1,8 +1,7 @@
-.bodyContainer {
+.circularProgressContainer {
+	margin-top: 12rem;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
 	justify-content: center;
-
-	background-color: palegreen;
 }

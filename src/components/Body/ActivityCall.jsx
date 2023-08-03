@@ -2,6 +2,7 @@ import React from "react";
 
 import styles from "./ActivityCall.module.css";
 import dateFormater from "../../utils/dateFormater.js";
+import CallInfo from "./CallInfo.jsx";
 
 function ActivityCall({ activity }) {
 	const {
@@ -32,6 +33,7 @@ function ActivityCall({ activity }) {
 		<div className={styles.activityCallContainer}>
 			<div>{dateInStr}</div>
 			<hr className={styles.activityCallDivider} />
+			<CallInfo activity={activity} />
 		</div>
 	);
 }
