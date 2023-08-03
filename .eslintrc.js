@@ -17,6 +17,7 @@ module.exports = {
 		"comma-dangle": "off",
 		"react/prop-types": "off",
 		"react/jsx-filename-extension": [1, { extensions: [".js", ".jsx"] }],
+		"no-param-reassign": "off",
 		"react/jsx-indent": "off",
 		"no-unused-vars": "warn",
 		"react/jsx-indent-props": "off",

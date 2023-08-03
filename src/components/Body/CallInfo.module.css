@@ -27,6 +27,8 @@
 
 .callInfo {
 	flex: 0 0 50%;
+	display: flex;
+	justify-content: space-between;
 }
 
 .callInfoDuration {

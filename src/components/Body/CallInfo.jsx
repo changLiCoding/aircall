@@ -1,7 +1,7 @@
 import React from "react";
 import PhoneMissedTwoToneIcon from "@mui/icons-material/PhoneMissedTwoTone";
-
 import { IconButton } from "@mui/material";
+import ArchiveOutlinedIcon from "@mui/icons-material/ArchiveOutlined";
 import styles from "./CallInfo.module.css";
 import dateFormater from "../../utils/dateFormater.js";
 
@@ -30,6 +30,11 @@ function CallInfo({ activity }) {
 
 			<div className={styles.callInfo}>
 				<div className={styles.callInfoFrom}>{from || "Unknown"}</div>
+				<IconButton
+					aria-label='archive'
+					size='small'>
+					<ArchiveOutlinedIcon fontSize='inherit' />
+				</IconButton>
 			</div>
 
 			<div className={styles.callInfoDuration}>{localTime}</div>
