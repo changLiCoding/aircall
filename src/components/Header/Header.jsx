@@ -1,6 +1,6 @@
 import React from "react";
 
-function Header() {
+const Header = () => {
 	return (
 		<header>
 			<svg
@@ -71,6 +71,6 @@ function Header() {
 			</svg>
 		</header>
 	);
-}
+};
 
 export default Header;

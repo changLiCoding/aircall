@@ -2,8 +2,15 @@ import React from "react";
 import ArchiveIcon from "@mui/icons-material/Archive";
 import { useSelector, useDispatch } from "react-redux";
 
-import { Button } from "@mui/material";
+import {
+	Button,
+	Skeleton,
+	CircularProgress,
+	Divider,
+	Chip,
+} from "@mui/material";
 import { useGetAllActivitiesQuery } from "../../features/activitiesApi.js";
+import ActivitiesList from "./ActivitiesList.jsx";
 
 function Body() {
 	const activities = useSelector((state) => state.activities);
@@ -18,7 +25,9 @@ function Body() {
 
 	const activitiesWithDirection = isLoading
 		? []
-		: data.filter((activity) => typeof activity.direction === "string");
+		: data
+				.filter((activity) => typeof activity.direction === "string")
+				.sort((a, b) => Date.parse(b.created_at) - Date.parse(a.created_at));
 
 	console.log(data);
 	console.log(activitiesWithDirection);
@@ -29,48 +38,16 @@ function Body() {
 		<div>
 			Body
 			<h2>Activities</h2>
-			<Button variant='contained'>
-				ArchiveIcon
-				<ArchiveIcon />
-			</Button>
+			<Divider>
+				<Chip label='ALL CALLS' />
+			</Divider>
 			{isLoading ? (
-				<div>Loading...</div>
-			) : (
 				<div>
-					{activitiesWithDirection.map((activity) => (
-						<div key={activity.id}>
-							<div>
-								Direction:
-								{activity.direction}
-							</div>
-							<div>
-								From:
-								{activity.from}
-							</div>
-							<div>
-								To:
-								{activity.to}
-							</div>
-						</div>
-					))}
+					<CircularProgress />
 				</div>
+			) : (
+				<ActivitiesList activities={activitiesWithDirection} />
 			)}
-			{/* {activities.activities.map((activity) => (
-				<div key={activity.id}>
-					<div>
-						Direction:
-						{activity.direction}
-					</div>
-					<div>
-						From:
-						{activity.from}
-					</div>
-					<div>
-						To:
-						{activity.to}
-					</div>
-				</div>
-			))} */}
 		</div>
 	);
 }
