@@ -4,6 +4,7 @@ import { IconButton } from "@mui/material";
 import ArchiveOutlinedIcon from "@mui/icons-material/ArchiveOutlined";
 import styles from "./CallInfo.module.css";
 import dateFormater from "../../utils/dateFormater.js";
+// import { useUpdateActivityMutation } from "../../features/activitiesApi.js";
 
 function CallInfo({ activity }) {
 	const {
@@ -19,6 +20,22 @@ function CallInfo({ activity }) {
 
 	const { localTime } = dateFormater(created_at);
 
+	// const [updateActivity, { isLoading, data, status }] =
+	// 	useUpdateActivityMutation();
+
+	// const handleArchive = async () => {
+	// 	console.log("Activity been archived ", activity.id);
+	// 	try {
+	// 		const result = await updateActivity({
+	// 			id: activity.id,
+	// 			is_archived: true,
+	// 		});
+	// 		console.log(result);
+	// 	} catch (error) {
+	// 		console.log(error);
+	// 	}
+	// };
+
 	return (
 		<div className={styles.callInfoContainer}>
 			<IconButton
@@ -32,7 +49,9 @@ function CallInfo({ activity }) {
 				<div className={styles.callInfoFrom}>{from || "Unknown"}</div>
 				<IconButton
 					aria-label='archive'
-					size='small'>
+					size='small'
+					// onClick={handleArchive}
+				>
 					<ArchiveOutlinedIcon fontSize='inherit' />
 				</IconButton>
 			</div>

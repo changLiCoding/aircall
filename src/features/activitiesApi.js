@@ -5,6 +5,7 @@ export const activitiesApi = createApi({
 	baseQuery: fetchBaseQuery({
 		baseUrl: "https://cerulean-marlin-wig.cyclic.app/",
 	}),
+	tagTypes: ["Activities"],
 	endpoints: (builder) => ({
 		getAllActivities: builder.query({
 			query: () => "activities",
@@ -12,8 +13,23 @@ export const activitiesApi = createApi({
 		getActivityById: builder.query({
 			query: (id) => `activities/${id}`,
 		}),
+		updateActivity: builder.mutation({
+			query: ({ id, patch }) => ({
+				url: `activities/${id}`,
+				method: "PATCH",
+				body: patch,
+			}),
+			transformResponse: (response) => {
+				console.log(response);
+
+				return response.data;
+			},
+		}),
 	}),
 });
 
-export const { useGetAllActivitiesQuery, useGetActivityByIdQuery } =
-	activitiesApi;
+export const {
+	useGetAllActivitiesQuery,
+	useGetActivityByIdQuery,
+	useUpdateActivityMutation,
+} = activitiesApi;
