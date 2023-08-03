@@ -1,4 +1,5 @@
 import React from "react";
+import ArchiveIcon from "@mui/icons-material/Archive";
 import { useSelector, useDispatch } from "react-redux";
 
 import { Button } from "@mui/material";
@@ -15,7 +16,12 @@ function Body() {
 
 	const { data, isLoading } = useGetAllActivitiesQuery();
 
+	const activitiesWithDirection = isLoading
+		? []
+		: data.filter((activity) => typeof activity.direction === "string");
+
 	console.log(data);
+	console.log(activitiesWithDirection);
 
 	console.log(activities.activities);
 
@@ -23,29 +29,30 @@ function Body() {
 		<div>
 			Body
 			<h2>Activities</h2>
-			<Button variant='contained'>Default</Button>
+			<Button variant='contained'>
+				ArchiveIcon
+				<ArchiveIcon />
+			</Button>
 			{isLoading ? (
 				<div>Loading...</div>
 			) : (
 				<div>
-					{data.map((activity) =>
-						typeof activity.direction === "string" ? (
-							<div key={activity.id}>
-								<div>
-									Direction:
-									{activity.direction}
-								</div>
-								<div>
-									From:
-									{activity.from}
-								</div>
-								<div>
-									To:
-									{activity.to}
-								</div>
+					{activitiesWithDirection.map((activity) => (
+						<div key={activity.id}>
+							<div>
+								Direction:
+								{activity.direction}
 							</div>
-						) : null
-					)}
+							<div>
+								From:
+								{activity.from}
+							</div>
+							<div>
+								To:
+								{activity.to}
+							</div>
+						</div>
+					))}
 				</div>
 			)}
 			{/* {activities.activities.map((activity) => (
