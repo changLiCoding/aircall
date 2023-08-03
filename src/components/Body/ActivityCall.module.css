@@ -7,3 +7,9 @@
 	margin-top: 2rem;
 	margin-bottom: 2rem;
 }
+
+.activityCallDivider {
+	background-color: #fff;
+	border-top: 1px dashed rgb(146, 183, 161);
+	margin-bottom: 15px;
+}

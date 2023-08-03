@@ -30,8 +30,8 @@ function ActivityCall({ activity }) {
 
 	return (
 		<div className={styles.activityCallContainer}>
-			<div className={styles.activityCallDivider}>{dateInStr}</div>
-			<hr className={styles.activityCallDivider/>
+			<div>{dateInStr}</div>
+			<hr className={styles.activityCallDivider} />
 		</div>
 	);
 }
