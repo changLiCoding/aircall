@@ -9,7 +9,10 @@ import {
 import RingVolumeTwoToneIcon from "@mui/icons-material/RingVolumeTwoTone";
 
 import styles from "./Body.module.css";
-import { useGetAllActivitiesQuery } from "../../features/activitiesApi.js";
+import {
+	useGetAllActivitiesQuery,
+	useGetActivityByIdQuery,
+} from "../../features/activitiesApi.js";
 import ActivitiesList from "./ActivitiesList.jsx";
 import ActivitiesHeader from "./ActivitiesHeader.jsx";
 

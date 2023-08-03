@@ -9,7 +9,11 @@ export const activitiesApi = createApi({
 		getAllActivities: builder.query({
 			query: () => "activities",
 		}),
+		getActivityById: builder.query({
+			query: (id) => `activities/${id}`,
+		}),
 	}),
 });
 
-export const { useGetAllActivitiesQuery } = activitiesApi;
+export const { useGetAllActivitiesQuery, useGetActivityByIdQuery } =
+	activitiesApi;
