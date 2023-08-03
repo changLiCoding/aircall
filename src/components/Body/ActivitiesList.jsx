@@ -1,6 +1,7 @@
 import React from "react";
 import ActivityCall from "./ActivityCall.jsx";
 import styles from "./ActivityCall.module.css";
+import BottomNavigationComponent from "../BottomNavigationComponent/BottomNavigationComponent.jsx";
 
 function ActivitiesList({ activities }) {
 	return (
@@ -16,6 +17,7 @@ function ActivitiesList({ activities }) {
 					);
 				})}
 			</div>
+			<BottomNavigationComponent />
 		</div>
 	);
 }

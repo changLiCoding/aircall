@@ -1,0 +1,15 @@
+.bottomNaviContainer {
+	position: fixed;
+	top: 800px;
+	/* bottom: 0;
+	margin: 0 auto;
+	left: 0;
+	right: 0; */
+	/* margin-left: 2px; */
+	/* left: 0; */
+	/* width: 100%; */
+	/* height: 55px; */
+	z-index: 1500;
+
+	/* margin-bottom: 100px; */
+}
