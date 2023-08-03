@@ -1,0 +1,35 @@
+.container {
+	width: 376px;
+	height: 666px;
+	z-index: 100;
+	overflow-y: scroll;
+	overflow-x: hidden;
+	background: rgb(249, 247, 247);
+	border-radius: 3px;
+	box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.9);
+}
+
+.containerView {
+	padding: 15px;
+}
+
+.headerSVGContainer {
+	position: absolute;
+	z-index: -1;
+	left: 0px;
+	width: 100%;
+	top: 0;
+}
+
+.headerSVGPath1 {
+	transition: duration-300 ease-in-out delay-150;
+
+	-webkit-transition: all 0.3s ease-in-out 0.15s;
+}
+
+.headerSVGPath2 {
+	transition: duration-300 ease-in-out delay-150;
+	transform: rotate(-180 720 250);
+	-webkit-transition: all 0.3s ease-in-out 0.15s;
+	/* transition-all: duration-300 ease-in-out delay-150; */
+}
