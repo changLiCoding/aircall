@@ -1,5 +1,7 @@
 .activitiesContainer {
 	padding: 15px;
+	overflow: scroll;
+	height: 420px;
 }
 
 .activityCallContainer {

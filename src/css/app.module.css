@@ -1,9 +1,8 @@
 .container {
+	position: relative;
 	width: 376px;
 	height: 666px;
 	z-index: 100;
-	overflow-y: scroll;
-	overflow-x: hidden;
 	background: rgb(249, 247, 247);
 	border-radius: 3px;
 	box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.9);
@@ -11,6 +10,7 @@
 
 .containerView {
 	padding: 15px;
+	height: 566px;
 }
 
 .headerSVGContainer {
