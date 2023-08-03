@@ -23,6 +23,8 @@ module.exports = {
 		"react/jsx-indent-props": "off",
 		"jsx-quotes": "off",
 		"implicit-arrow-linebreak": "off",
+		"no-confusing-arrow": "off",
+		"function-paren-newline": "off",
 		"react/react-in-jsx-scope": 0,
 		"import/extensions": [
 			"error",
