@@ -4,6 +4,7 @@ import BottomNavigationAction from "@mui/material/BottomNavigationAction";
 import RestoreIcon from "@mui/icons-material/Restore";
 import FavoriteIcon from "@mui/icons-material/Favorite";
 import ArchiveIcon from "@mui/icons-material/Archive";
+import HomeIcon from "@mui/icons-material/Home";
 import Paper from "@mui/material/Paper";
 
 import styles from "./BottomNavigationComponent.module.css";
@@ -21,8 +22,7 @@ function BottomNavigationComponent() {
 				onChange={(event, newValue) => {
 					setValue(newValue);
 				}}>
-				<BottomNavigationAction icon={<RestoreIcon />} />
-				<BottomNavigationAction icon={<FavoriteIcon />} />
+				<BottomNavigationAction icon={<HomeIcon />} />
 				<BottomNavigationAction icon={<ArchiveIcon />} />
 			</BottomNavigation>
 		</Paper>
