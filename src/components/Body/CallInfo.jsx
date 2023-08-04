@@ -6,6 +6,7 @@ import ArchiveOutlinedIcon from "@mui/icons-material/ArchiveOutlined";
 import styles from "./CallInfo.module.css";
 import dateFormater from "../../utils/dateFormater.js";
 import { useUpdateActivityMutation } from "../../services/activitiesApi.js";
+import CallIconGenerator from "../../utils/callIconGenerator.jsx";
 
 function CallInfo({ activity }) {
 	const {
@@ -39,8 +40,8 @@ function CallInfo({ activity }) {
 			<IconButton
 				className={styles.callInfoIconButton}
 				size='small'
-				style={{ color: "#CECE5A" }}>
-				<PhoneMissedTwoToneIcon />
+				style={{ color: call_type === "missed" ? "#F31559" : "#CECE5A" }}>
+				<CallIconGenerator callType={call_type} />
 			</IconButton>
 
 			<div className={styles.callInfo}>
