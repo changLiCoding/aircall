@@ -9,21 +9,24 @@ export const activitiesApi = createApi({
 	endpoints: (builder) => ({
 		getAllActivities: builder.query({
 			query: () => "activities",
+			providesTags: ["Activities"],
 		}),
 		getActivityById: builder.query({
 			query: (id) => `activities/${id}`,
+			providesTags: (result, error, arg) => ["Activities"],
 		}),
 		updateActivity: builder.mutation({
-			query: ({ id, patch }) => ({
+			query: ({ id, is_archived }) => ({
 				url: `activities/${id}`,
 				method: "PATCH",
-				body: patch,
+				body: { is_archived },
 			}),
 			transformResponse: (response) => {
-				console.log(response);
+				console.log("Respnse from updateActivity mutations: ", response);
 
 				return response.data;
 			},
+			invalidatesTags: ["Activities"],
 		}),
 	}),
 });

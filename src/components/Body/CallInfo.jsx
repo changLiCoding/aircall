@@ -1,10 +1,11 @@
 import React from "react";
 import PhoneMissedTwoToneIcon from "@mui/icons-material/PhoneMissedTwoTone";
+import { useSelector } from "react-redux";
 import { IconButton } from "@mui/material";
 import ArchiveOutlinedIcon from "@mui/icons-material/ArchiveOutlined";
 import styles from "./CallInfo.module.css";
 import dateFormater from "../../utils/dateFormater.js";
-// import { useUpdateActivityMutation } from "../../features/activitiesApi.js";
+import { useUpdateActivityMutation } from "../../features/activitiesApi.js";
 
 function CallInfo({ activity }) {
 	const {
@@ -18,23 +19,20 @@ function CallInfo({ activity }) {
 		is_archived,
 	} = activity;
 
+	const { viewArchived } = useSelector((state) => state.activities);
+
 	const { localTime } = dateFormater(created_at);
 
-	// const [updateActivity, { isLoading, data, status }] =
-	// 	useUpdateActivityMutation();
+	const [updateActivity, { isLoading, data, status }] =
+		useUpdateActivityMutation();
 
-	// const handleArchive = async () => {
-	// 	console.log("Activity been archived ", activity.id);
-	// 	try {
-	// 		const result = await updateActivity({
-	// 			id: activity.id,
-	// 			is_archived: true,
-	// 		});
-	// 		console.log(result);
-	// 	} catch (error) {
-	// 		console.log(error);
-	// 	}
-	// };
+	const handleArchive = () => {
+		console.log("Activity been archived ", activity.id);
+		updateActivity({ id: activity.id, is_archived: !viewArchived })
+			.unwrap()
+			.then((fulfilled) => console.log(fulfilled))
+			.catch((rejected) => console.log(rejected));
+	};
 
 	return (
 		<div className={styles.callInfoContainer}>
@@ -50,8 +48,7 @@ function CallInfo({ activity }) {
 				<IconButton
 					aria-label='archive'
 					size='small'
-					// onClick={handleArchive}
-				>
+					onClick={handleArchive}>
 					<ArchiveOutlinedIcon fontSize='inherit' />
 				</IconButton>
 			</div>
