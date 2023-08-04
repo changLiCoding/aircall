@@ -1,13 +1,10 @@
 import React from "react";
-import { useSelector } from "react-redux";
 import ActivityCall from "./ActivityCall.jsx";
 import styles from "./ActivityCall.module.css";
 import useActivitiesHook from "../../hooks/useActivitiesHook.js";
 
-function ActivitiesList({ activities }) {
+function ActivitiesList({ activities, viewArchived }) {
 	const { handleAddSameDayActivities } = useActivitiesHook();
-
-	const { viewArchived } = useSelector((state) => state.activities);
 
 	if (viewArchived) {
 		activities = handleAddSameDayActivities(

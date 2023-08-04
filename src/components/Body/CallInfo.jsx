@@ -5,7 +5,7 @@ import { IconButton } from "@mui/material";
 import ArchiveOutlinedIcon from "@mui/icons-material/ArchiveOutlined";
 import styles from "./CallInfo.module.css";
 import dateFormater from "../../utils/dateFormater.js";
-import { useUpdateActivityMutation } from "../../features/activitiesApi.js";
+import { useUpdateActivityMutation } from "../../services/activitiesApi.js";
 
 function CallInfo({ activity }) {
 	const {

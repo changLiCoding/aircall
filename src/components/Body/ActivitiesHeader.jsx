@@ -4,7 +4,7 @@ import React from "react";
 
 import styles from "./ActivitiesHeader.module.css";
 
-function ActivitiesHeader() {
+function ActivitiesHeader({ viewArchived }) {
 	return (
 		<div className={styles.activitiesHeaderContainer}>
 			<Button
@@ -13,7 +13,7 @@ function ActivitiesHeader() {
 				size='small'
 				startIcon={<Inventory2TwoToneIcon />}
 				style={{ textTransform: "none", color: "#25BC1D" }}>
-				Archive all calls
+				{!viewArchived ? "Archive all calls" : "Unarchive all calls"}
 			</Button>
 		</div>
 	);

@@ -10,7 +10,7 @@ import {
 import RingVolumeTwoToneIcon from "@mui/icons-material/RingVolumeTwoTone";
 
 import styles from "./Body.module.css";
-import { useGetAllActivitiesQuery } from "../../features/activitiesApi.js";
+import { useGetAllActivitiesQuery } from "../../services/activitiesApi.js";
 import ActivitiesList from "./ActivitiesList.jsx";
 import ActivitiesHeader from "./ActivitiesHeader.jsx";
 
@@ -29,7 +29,7 @@ function Body() {
 
 	return (
 		<div>
-			<ActivitiesHeader />
+			<ActivitiesHeader viewArchived={viewArchived} />
 			<Divider>
 				<Chip
 					label={viewArchived ? "All Archived Calls" : "All Calls"}
@@ -48,7 +48,10 @@ function Body() {
 					<CircularProgress />
 				</div>
 			) : (
-				<ActivitiesList activities={activitiesWithDirection} />
+				<ActivitiesList
+					activities={activitiesWithDirection}
+					viewArchived={viewArchived}
+				/>
 			)}
 		</div>
 	);
