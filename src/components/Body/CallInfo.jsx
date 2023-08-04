@@ -1,11 +1,11 @@
 import React from "react";
-import PhoneMissedTwoToneIcon from "@mui/icons-material/PhoneMissedTwoTone";
 import { useSelector } from "react-redux";
 import { IconButton } from "@mui/material";
 import ArchiveOutlinedIcon from "@mui/icons-material/ArchiveOutlined";
 import styles from "./CallInfo.module.css";
 import dateFormater from "../../utils/dateFormater.js";
 import { useUpdateActivityMutation } from "../../services/activitiesApi.js";
+import CallIconGenerator from "../../utils/CallIconGenerator.jsx";
 
 function CallInfo({ activity }) {
 	const {
@@ -39,12 +39,18 @@ function CallInfo({ activity }) {
 			<IconButton
 				className={styles.callInfoIconButton}
 				size='small'
-				style={{ color: "#CECE5A" }}>
-				<PhoneMissedTwoToneIcon />
+				style={{ color: call_type === "missed" ? "#F31559" : "#CECE5A" }}>
+				<CallIconGenerator callType={call_type} />
 			</IconButton>
 
 			<div className={styles.callInfo}>
-				<div className={styles.callInfoFrom}>{from || "Unknown"}</div>
+				<div className={styles.callInfoFrom}>
+					<span>
+						{from ? `+${from}` : "Unknown"}{" "}
+						{call_type === "missed" ? "missed" : "answered"}
+					</span>
+					<span>{`tried to call ${to}`}</span>
+				</div>
 				<IconButton
 					aria-label='archive'
 					size='small'

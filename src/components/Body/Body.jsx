@@ -26,7 +26,7 @@ function Body() {
 
 		return handleAddSameDayActivities(
 			data
-				.filter((activity) => typeof activity.direction === "string")
+				.filter((activity) => typeof activity.call_type === "string")
 				.sort((a, b) => Date.parse(b.created_at) - Date.parse(a.created_at))
 				.filter((activity) => activity.is_archived === viewArchived)
 		);
