@@ -36,3 +36,21 @@
 	font-size: 0.8rem;
 	color: #a6a6a6;
 }
+
+.callInfoFrom {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+
+.callInfoFrom span:first-child {
+	font-size: 0.9rem;
+	color: #a6a6a6;
+	margin-bottom: 4px;
+	font-weight: 700;
+}
+
+.callInfoFrom span:last-child {
+	color: #000;
+	font-size: 10px;
+}
