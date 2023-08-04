@@ -5,7 +5,7 @@ import ArchiveOutlinedIcon from "@mui/icons-material/ArchiveOutlined";
 import styles from "./CallInfo.module.css";
 import dateFormater from "../../utils/dateFormater.js";
 import { useUpdateActivityMutation } from "../../services/activitiesApi.js";
-import CallIconGenerator from "../../utils/CallIconGenerator.jsx";
+import CallIconGenerator from "../../utils/callIconGenerator.jsx";
 
 function CallInfo({ activity }) {
 	const { call_type, created_at, from, to } = activity;
