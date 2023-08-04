@@ -1,7 +1,7 @@
 import { configureStore } from "@reduxjs/toolkit";
 import { setupListeners } from "@reduxjs/toolkit/query";
 
-import { activitiesApi } from "../features/activitiesApi.js";
+import { activitiesApi } from "../services/activitiesApi.js";
 import activitiesSlice from "../features/activitiesSlice.js";
 
 console.log(activitiesApi.reducerPath);

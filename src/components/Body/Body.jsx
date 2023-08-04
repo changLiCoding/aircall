@@ -1,4 +1,5 @@
 import React, { useMemo } from "react";
+import { useSelector } from "react-redux";
 import {
 	Button,
 	Skeleton,
@@ -7,32 +8,39 @@ import {
 	Chip,
 } from "@mui/material";
 import RingVolumeTwoToneIcon from "@mui/icons-material/RingVolumeTwoTone";
+import ActivitiesHeader from "./ActivitiesHeader.jsx";
 
 import styles from "./Body.module.css";
-import { useGetAllActivitiesQuery } from "../../features/activitiesApi.js";
+import { useGetAllActivitiesQuery } from "../../services/activitiesApi.js";
 import ActivitiesList from "./ActivitiesList.jsx";
-import ActivitiesHeader from "./ActivitiesHeader.jsx";
+import useActivitiesHook from "../../hooks/useActivitiesHook.js";
 
 function Body() {
 	const { data, isLoading } = useGetAllActivitiesQuery();
+	const { handleAddSameDayActivities } = useActivitiesHook();
+
+	const { viewArchived } = useSelector((state) => state.activities);
 
 	const activitiesWithDirection = useMemo(() => {
 		if (isLoading) return [];
 
-		return data
-			.filter((activity) => typeof activity.direction === "string")
-			.sort((a, b) => Date.parse(a.created_at) - Date.parse(b.created_at));
-	}, [data, isLoading]);
-
-	console.log(data);
-	console.log(activitiesWithDirection);
+		return handleAddSameDayActivities(
+			data
+				.filter((activity) => typeof activity.direction === "string")
+				.sort((a, b) => Date.parse(b.created_at) - Date.parse(a.created_at))
+				.filter((activity) => activity.is_archived === viewArchived)
+		);
+	}, [data, isLoading, viewArchived, handleAddSameDayActivities]);
 
 	return (
 		<div>
-			<ActivitiesHeader />
+			<ActivitiesHeader
+				viewArchived={viewArchived}
+				activities={activitiesWithDirection}
+			/>
 			<Divider>
 				<Chip
-					label='All Calls'
+					label={viewArchived ? "All Archived Calls" : "All Calls"}
 					variant='outlined'
 					size='small'
 					icon={<RingVolumeTwoToneIcon color='#7EAA92' />}
@@ -48,7 +56,10 @@ function Body() {
 					<CircularProgress />
 				</div>
 			) : (
-				<ActivitiesList activities={activitiesWithDirection} />
+				<ActivitiesList
+					activities={activitiesWithDirection}
+					viewArchived={viewArchived}
+				/>
 			)}
 		</div>
 	);
