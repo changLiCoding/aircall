@@ -15,6 +15,19 @@ export const activitiesApi = createApi({
 			query: (id) => `activities/${id}`,
 			providesTags: (result, error, arg) => ["Activities"],
 		}),
+		resetAllActivities: builder.mutation({
+			query: () => ({
+				url: "reset",
+				method: "PATCH",
+			}),
+
+			transformResponse: (response) => {
+				console.log("Respnse from resetAllActivities mutations: ", response);
+				return response.data;
+			},
+			invalidatesTags: ["Activities"],
+		}),
+
 		updateActivity: builder.mutation({
 			query: ({ id, is_archived }) => ({
 				url: `activities/${id}`,
@@ -35,4 +48,5 @@ export const {
 	useGetAllActivitiesQuery,
 	useGetActivityByIdQuery,
 	useUpdateActivityMutation,
+	useResetAllActivitiesMutation,
 } = activitiesApi;
