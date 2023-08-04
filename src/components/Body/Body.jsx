@@ -1,12 +1,6 @@
 import React, { useMemo } from "react";
 import { useSelector } from "react-redux";
-import {
-	Button,
-	Skeleton,
-	CircularProgress,
-	Divider,
-	Chip,
-} from "@mui/material";
+import { CircularProgress, Divider, Chip } from "@mui/material";
 import RingVolumeTwoToneIcon from "@mui/icons-material/RingVolumeTwoTone";
 import ActivitiesHeader from "./ActivitiesHeader.jsx";
 

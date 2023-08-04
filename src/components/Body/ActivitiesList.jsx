@@ -1,7 +1,6 @@
 import React from "react";
 import ActivityCall from "./ActivityCall.jsx";
 import styles from "./ActivityCall.module.css";
-import useActivitiesHook from "../../hooks/useActivitiesHook.js";
 
 function ActivitiesList({ activities }) {
 	return (

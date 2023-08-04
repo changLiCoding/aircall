@@ -11,7 +11,6 @@ const activitiesSlice = createSlice({
 
 	reducers: {
 		changeViewArchived: (state, action) => {
-			console.log(action);
 			state.viewArchived = action.payload;
 		},
 	},

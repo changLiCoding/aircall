@@ -9,22 +9,16 @@ import {
 import styles from "./ActivitiesHeader.module.css";
 
 function ActivitiesHeader({ viewArchived, activities }) {
-	const [resetAllActivities, { isLoading }] = useResetAllActivitiesMutation();
+	const [resetAllActivities] = useResetAllActivitiesMutation();
 
 	const [updateActivity] = useUpdateActivityMutation();
 
 	const handleResetAllActivities = () => {
 		if (viewArchived) {
-			resetAllActivities()
-				.unwrap()
-				.catch((rejected) => console.log(rejected));
+			resetAllActivities().unwrap();
 		} else {
 			activities.forEach((activity) => {
-				console.log("Activity been archived ", activity.id);
-				updateActivity({ id: activity.id, is_archived: true })
-					.unwrap()
-					.then((fulfilled) => console.log(fulfilled))
-					.catch((rejected) => console.log(rejected));
+				updateActivity({ id: activity.id, is_archived: true }).unwrap();
 			});
 		}
 	};

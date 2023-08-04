@@ -13,7 +13,7 @@ export const activitiesApi = createApi({
 		}),
 		getActivityById: builder.query({
 			query: (id) => `activities/${id}`,
-			providesTags: (result, error, arg) => ["Activities"],
+			providesTags: () => ["Activities"],
 		}),
 		resetAllActivities: builder.mutation({
 			query: () => ({
@@ -21,10 +21,7 @@ export const activitiesApi = createApi({
 				method: "PATCH",
 			}),
 
-			transformResponse: (response) => {
-				console.log("Respnse from resetAllActivities mutations: ", response);
-				return response.data;
-			},
+			transformResponse: (response) => response.data,
 			invalidatesTags: ["Activities"],
 		}),
 
@@ -34,11 +31,7 @@ export const activitiesApi = createApi({
 				method: "PATCH",
 				body: { is_archived },
 			}),
-			transformResponse: (response) => {
-				console.log("Respnse from updateActivity mutations: ", response);
-
-				return response.data;
-			},
+			transformResponse: (response) => response.data,
 			invalidatesTags: ["Activities"],
 		}),
 	}),

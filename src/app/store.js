@@ -4,8 +4,6 @@ import { setupListeners } from "@reduxjs/toolkit/query";
 import { activitiesApi } from "../services/activitiesApi.js";
 import activitiesSlice from "../features/activitiesSlice.js";
 
-console.log(activitiesApi.reducerPath);
-
 export const store = configureStore({
 	reducer: {
 		activities: activitiesSlice,

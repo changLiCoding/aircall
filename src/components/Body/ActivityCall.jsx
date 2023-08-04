@@ -5,30 +5,9 @@ import dateFormater from "../../utils/dateFormater.js";
 import CallInfo from "./CallInfo.jsx";
 
 function ActivityCall({ activity }) {
-	const {
-		call_type,
-		created_at,
-		direction,
-		from,
-		to,
-		via,
-		duration,
-		is_archived,
-		isSameDay,
-	} = activity;
+	const { created_at, isSameDay } = activity;
 
 	const { localDate } = dateFormater(created_at);
-
-	console.log(
-		call_type,
-		created_at,
-		direction,
-		from,
-		to,
-		via,
-		duration,
-		is_archived
-	);
 
 	return (
 		<div className={styles.activityCallContainer}>

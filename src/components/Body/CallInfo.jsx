@@ -8,30 +8,16 @@ import { useUpdateActivityMutation } from "../../services/activitiesApi.js";
 import CallIconGenerator from "../../utils/CallIconGenerator.jsx";
 
 function CallInfo({ activity }) {
-	const {
-		call_type,
-		created_at,
-		direction,
-		from,
-		to,
-		via,
-		duration,
-		is_archived,
-	} = activity;
+	const { call_type, created_at, from, to } = activity;
 
 	const { viewArchived } = useSelector((state) => state.activities);
 
 	const { localTime } = dateFormater(created_at);
 
-	const [updateActivity, { isLoading, data, status }] =
-		useUpdateActivityMutation();
+	const [updateActivity] = useUpdateActivityMutation();
 
 	const handleArchive = () => {
-		console.log("Activity been archived ", activity.id);
-		updateActivity({ id: activity.id, is_archived: !viewArchived })
-			.unwrap()
-			.then((fulfilled) => console.log(fulfilled))
-			.catch((rejected) => console.log(rejected));
+		updateActivity({ id: activity.id, is_archived: !viewArchived }).unwrap();
 	};
 
 	return (

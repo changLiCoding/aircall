@@ -1,4 +1,4 @@
-import * as React from "react";
+import React from "react";
 import { useSelector, useDispatch } from "react-redux";
 import BottomNavigation from "@mui/material/BottomNavigation";
 import BottomNavigationAction from "@mui/material/BottomNavigationAction";
@@ -15,20 +15,13 @@ function BottomNavigationComponent() {
 
 	const dispatch = useDispatch();
 
-	console.log("viewArchived", viewArchived);
-
-	const [value, setValue] = React.useState(0);
-
 	return (
 		<Paper
 			elevation={3}
 			className={styles.bottomNaviContainer}>
 			<BottomNavigation
 				showLabels
-				value={viewArchived ? 1 : 0}
-				onChange={(event, newValue) => {
-					setValue(newValue);
-				}}>
+				value={viewArchived ? 1 : 0}>
 				<BottomNavigationAction
 					onClick={() => {
 						dispatch(changeViewArchived(false));
