@@ -50,7 +50,8 @@ function CallInfo({ activity }) {
 				open={open}
 				onClose={handleClose}
 				aria-labelledby='alert-dialog-title'
-				aria-describedby='alert-dialog-description'>
+				aria-describedby='alert-dialog-description'
+				style={{ maxWidth: "400px", marginLeft: "auto", marginRight: "auto" }}>
 				<DialogTitle id='alert-dialog-title'>Call details</DialogTitle>
 				<DialogContent>
 					<DialogContentText id='alert-dialog-description'>
