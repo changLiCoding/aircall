@@ -62,7 +62,8 @@ function CallInfo({ activity }) {
 					<Button onClick={handleClose}>Close</Button>
 					<Button
 						onClick={handleClose}
-						autoFocus>
+						autoFocus
+						style={{ color: "#0B666A" }}>
 						Call
 					</Button>
 				</DialogActions>
