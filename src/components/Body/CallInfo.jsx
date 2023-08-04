@@ -45,7 +45,10 @@ function CallInfo({ activity }) {
 
 			<div className={styles.callInfo}>
 				<div className={styles.callInfoFrom}>
-					<span>{from ? `+ ${from}` : "Unknown"}</span>
+					<span>
+						{from ? `+${from}` : "Unknown"}{" "}
+						{call_type === "missed" ? "missed" : "answered"}
+					</span>
 					<span>{`tried to call ${to}`}</span>
 				</div>
 				<IconButton
