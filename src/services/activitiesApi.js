@@ -1,5 +1,7 @@
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 
+console.log("activitiesApi.js");
+
 export const activitiesApi = createApi({
 	reducerPath: "activitiesApi",
 	baseQuery: fetchBaseQuery({
